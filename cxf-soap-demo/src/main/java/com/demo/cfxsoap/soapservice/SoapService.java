@@ -20,7 +20,7 @@ public class SoapService {
 	@WebMethod
 	public List<Charge> getAllCharges() {
 
-		final List<Charge> cars = List.of(
+		List<Charge> cars = List.of(
 				new Charge(1, "Charge 1", 300f), 
 				new Charge(2, "Charge 2", 140f),
 				new Charge(2, "Charge 3", 300f), 
