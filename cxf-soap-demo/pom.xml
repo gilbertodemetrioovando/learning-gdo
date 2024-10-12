@@ -9,6 +9,7 @@
 	<properties>
 		<cxf.version>3.4.2</cxf.version>
 		<java.version>11</java.version>
+		<apacheCommons.version>3.5</apacheCommons.version>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -20,49 +21,87 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>	
-	      <groupId>org.apache.cxf</groupId>
-	      <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-	      <version>${cxf.version}</version>
-	    </dependency>	    
-	     <dependency>
-	        <groupId>org.apache.cxf</groupId>
-	        <artifactId>cxf-rt-transports-http-jetty</artifactId>
-	        <version>${cxf.version}</version>
-	        <scope>test</scope>
-	    </dependency>	    
-	    <dependency>
-		    <groupId>org.apache.cxf</groupId>
-		    <artifactId>cxf-rt-features-logging</artifactId>
-		    <version>${cxf.version}</version>    
+
+
+		<!-- Apache CXF -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>		
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jaxb-impl</artifactId>
+					<groupId>com.sun.xml.bind</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>geronimo-jaxws_2.1_spec</artifactId>
+					<groupId>org.apache.geronimo.specs</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-features-logging</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>
+				org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>
+				org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<scope>
+				test</scope>
 		</dependency>
+
+		<!-- Apache commons -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>
+				commons-lang3</artifactId>
+			<version>${apacheCommons.version}</version>
+		</dependency>
+		
+		
+		
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
+				<groupId>
+					org.apache.maven.plugins</groupId>
+				<artifactId>
+					maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<target>
+						${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
+				<groupId>
+					org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<executable>true</executable>
+					<executable>
+						true</executable>
 				</configuration>
 			</plugin>
-		</plugins>		
+		</plugins>
 	</build>	
 </project>

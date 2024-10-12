@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@SpringBootApplication(scanBasePackages= { "com.demo.cfxsoap.config", "com.demo.cfxsoap.soapservice"})
 @SpringBootApplication(scanBasePackages= { "com.demo.cfxsoap"})
 //@SpringBootApplication
-public class Application {
+public class CfxSoapDemoApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(CfxSoapDemoApplication.class, args);
     }
 }

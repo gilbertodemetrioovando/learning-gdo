@@ -7,21 +7,23 @@ import org.springframework.stereotype.Service;
 
 import com.demo.cfxsoap.soapservice.Charge;
 import com.demo.cfxsoap.soapservice.SoapService;
-import com.demo.cfxsoap.soapservice.SoapServiceService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @Service
 public class SoapServiceClient {
 	
-	private final SoapService soapService1 = new SoapServiceService().getSoapServicePort();
+	private final SoapService soapClientService;
 
 	
 	public String sayHello(String value) {
-		return this.soapService1.sayHello("Gil");
+		return this.soapClientService.sayHello("Gil");
 	}
 
 	
 	public List<Charge> getAllCharges() {
-		return this.soapService1.getAllCharges();
+		return this.soapClientService.getAllCharges();
 	}
 
 
