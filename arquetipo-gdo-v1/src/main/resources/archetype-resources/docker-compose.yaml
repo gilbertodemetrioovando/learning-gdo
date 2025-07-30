@@ -1,0 +1,16 @@
+name: ${artifactId}
+services:
+   ${artifactId}-mysql8:
+      container_name: openpay-rule-engine-srv-mysql8
+      image: mysql:8
+      ports:
+      - 3320:3306
+      volumes:
+      - openpay-rule-engine-srv-mysql8-data:/var/lib/mysql
+      environment:
+         MYSQL_ROOT_PASSWORD: toor
+         MYSQL_USER: user
+         MYSQL_PASSWORD: local
+         MYSQL_DATABASE: APP
+volumes:
+   ${artifactId}-mysql8-data:
