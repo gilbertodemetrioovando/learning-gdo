@@ -1,0 +1,11 @@
+El Principio de Sustitución de Liskov establece que las subclases 
+deben ser sustituibles por sus clases base.
+
+Este es el comportamiento esperado, porque cuando usamos la herencia asumimos que 
+la clase secundaria hereda todo lo que tiene la superclase. 
+La clase secundaria extiende el comportamiento pero nunca lo reduce.
+
+Mala practica en paquete com.gil.javarepaso.solid.liskovsubstitution.badpractice
+
+Cuando de la clase Base, las subclases no comparten un comportamiento similar, pueden
+devolver resultados diferentes

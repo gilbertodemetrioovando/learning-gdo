@@ -1,0 +1,7 @@
+La segregación significa mantener las cosas separadas, y el Principio de Segregación de Interfaces 
+se trata de separar las interfaces.
+
+El principio establece que muchas interfaces específicas del cliente 
+son mejores que una interfaz de propósito general. 
+
+No se debe obligar a los clientes a implementar una función que no necesitan.

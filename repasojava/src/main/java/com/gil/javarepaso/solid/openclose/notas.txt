@@ -1,0 +1,11 @@
+El principio de apertura y cierre exige que las clases deban estar abiertas a la extensión y 
+cerradas a la modificación.
+
+Modificación significa cambiar el código de una clase existente y extensión 
+significa agregar una nueva funcionalidad.
+
+Entonces, lo que este principio quiere decir es: Deberíamos poder agregar nuevas funciones 
+sin tocar el código existente para la clase. Esto se debe a que cada vez que modificamos 
+el código existente, corremos el riesgo de crear errores potenciales. 
+Por lo tanto, debemos evitar tocar el código de producción probado y confiable 
+(en su mayoría) si es posible.

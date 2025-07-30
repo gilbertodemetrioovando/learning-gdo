@@ -1,0 +1,7 @@
+El principio de inversión de dependencia establece que nuestras clases deben depender 
+de interfaces o clases abstractas en lugar de clases y funciones concretas.
+
+Queremos que nuestras clases estén abiertas a la extensión, 
+por lo que hemos reorganizado nuestras dependencias para que dependan de 
+interfaces en lugar de clases concretas.
+
